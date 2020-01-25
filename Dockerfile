@@ -21,7 +21,7 @@ ENV PUB_PROTOCOL auth_aes128_md5
 ENV PUB_OBFS http_simple
 ENV PUB_ONLY true
 
-RUN git clone -b docker https://github.com/rensouhou-kai/legendsock_docker.git legendsock
+RUN git clone https://github.com/rensouhou-kai/legendsock_docker.git legendsock
 
 RUN sed -ri "s@^(.*\"host\": ).*@\1\"${MYSQL_HOST}\",@" /legendsock/usermysql.json
 RUN sed -ri "s@^(.*\"port\": ).*@\1${MYSQL_PORT},@" /legendsock/usermysql.json
