@@ -35,6 +35,8 @@ RUN sed -ri "s@^(.*\"method\": ).*@\1\"${PUB_METHOD}\",@" /legendsock/user-confi
 RUN sed -ri "s@^(.*\"protocol\": ).*@\1\"${PUB_PROTOCOL}\",@" /legendsock/user-config.json
 RUN sed -ri "s@^(.*\"obfs\": ).*@\1\"${PUB_OBFS}\",@" /legendsock/user-config.json
 RUN sed -ri "s@^(.*\"additional_ports_only\": ).*@\1${PUB_ONLY},@" /legendsock/user-config.json
+RUN chmod +x /legendsock/*.sh
+RUN chmod +x /legendsock/shadowsocks/*.sh
 
 
 ENTRYPOINT ["/legendsock/docker_run.sh"]
